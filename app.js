@@ -124,7 +124,7 @@ const uiStrings = {
 const state = {
   uiLanguage: 'en',
   libraryName: "Liar's Edge Custom Library",
-  defaultLanguage: 'it',
+  defaultLanguage: 'en',
   questions: []
 };
 
