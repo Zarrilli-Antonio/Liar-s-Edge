@@ -6,19 +6,28 @@
   <title>Liar's Edge - Question Library Builder</title>
   <meta name="description" content="Crea e scarica file JSON multilingua per la libreria domande di Liar's Edge." />
   <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js" defer></script>
 </head>
 <body>
   <main class="shell">
     <section class="hero">
       <div>
-        <p class="eyebrow">GitHub Pages ready</p>
-        <h1>Question Library Builder</h1>
-        <p class="lead">Crea un JSON multilingua con traduzioni per it, en, fr e es, poi scaricalo e caricalo nell'app.</p>
+        <p class="eyebrow" id="eyebrowText">GitHub Pages ready</p>
+        <h1 id="heroTitle">Question Library Builder</h1>
+        <p class="lead" id="heroLead">Crea un JSON multilingua con traduzioni per it, en, fr e es, poi scaricalo e caricalo nell'app.</p>
       </div>
       <div class="hero-card">
-        <label for="libraryName">Nome libreria</label>
+        <label for="uiLanguage" id="uiLanguageLabel">Lingua interfaccia</label>
+        <select id="uiLanguage">
+          <option value="it">Italiano</option>
+          <option value="en">English</option>
+          <option value="fr">Français</option>
+          <option value="es">Español</option>
+        </select>
+
+        <label for="libraryName" id="libraryNameLabel">Nome libreria</label>
         <input id="libraryName" type="text" value="Liar's Edge Custom Library" />
-        <label for="defaultLanguage">Lingua predefinita</label>
+        <label for="defaultLanguage" id="defaultLanguageLabel">Lingua predefinita</label>
         <select id="defaultLanguage">
           <option value="it">Italiano</option>
           <option value="en">English</option>
@@ -36,7 +45,7 @@
     <section class="workspace">
       <div class="panel">
         <div class="panel-header">
-          <h2>Domande</h2>
+          <h2 id="questionsTitle">Domande</h2>
           <span id="questionCount" class="badge">0 domande</span>
         </div>
         <div id="questionsContainer" class="questions"></div>
@@ -44,11 +53,21 @@
 
       <div class="panel preview-panel">
         <div class="panel-header">
-          <h2>Anteprima JSON</h2>
+          <h2 id="previewTitle">Anteprima JSON</h2>
           <button id="copyBtn" class="secondary small">Copia</button>
         </div>
         <textarea id="jsonPreview" readonly spellcheck="false"></textarea>
-        <p class="hint">Il formato finale è compatibile con l'app: ogni domanda contiene <code>translations</code> con le lingue disponibili.</p>
+        <p class="hint" id="formatHint">Il formato finale è compatibile con l'app: ogni domanda contiene <code>translations</code> con le lingue disponibili.</p>
+      </div>
+
+      <div class="panel qr-panel">
+        <div class="panel-header">
+          <h2 id="qrTitle">QR Download</h2>
+          <button id="copyShareLinkBtn" class="secondary small">Copia link</button>
+        </div>
+        <p class="hint" id="qrHint">Scansiona il QR per aprire la pagina con il JSON già pronto per il download.</p>
+        <div id="qrCode" class="qr-code"></div>
+        <input id="shareUrl" class="share-url" readonly />
       </div>
     </section>
   </main>
@@ -58,7 +77,7 @@
       <div class="question-top">
         <div>
           <p class="question-index"></p>
-          <h3>Domanda</h3>
+          <h3 class="questionHeading">Domanda</h3>
         </div>
         <button class="removeBtn danger" type="button">Rimuovi</button>
       </div>
@@ -95,6 +114,6 @@
     </article>
   </template>
 
-  <script src="app.js"></script>
+  <script src="app.js" defer></script>
 </body>
 </html>
