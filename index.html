@@ -4,9 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Liar's Edge - Question Library Builder</title>
-  <meta name="description" content="Crea e scarica file JSON multilingua per la libreria domande di Liar's Edge." />
+  <meta name="description" content="Crea, importa, modifica e scarica file JSON multilingua per la libreria domande di Liar's Edge." />
   <link rel="stylesheet" href="styles.css" />
-  <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js" defer></script>
 </head>
 <body>
   <main class="shell">
@@ -37,7 +36,13 @@
         <div class="actions">
           <button id="addQuestionBtn" class="secondary">+ Aggiungi domanda</button>
           <button id="loadExampleBtn" class="secondary">Carica esempio</button>
+          <label class="file-button secondary" for="importJsonInput" id="importJsonLabel">Carica JSON</label>
+          <input id="importJsonInput" type="file" accept="application/json,.json" />
           <button id="downloadBtn">Scarica JSON</button>
+        </div>
+        <div id="dropZone" class="drop-zone" role="button" tabindex="0" aria-label="Carica JSON tramite trascinamento">
+          <strong id="dropZoneTitle">Trascina qui il JSON</strong>
+          <span id="dropZoneHint">oppure usa il pulsante Carica JSON</span>
         </div>
       </div>
     </section>
@@ -58,16 +63,7 @@
         </div>
         <textarea id="jsonPreview" readonly spellcheck="false"></textarea>
         <p class="hint" id="formatHint">Il formato finale è compatibile con l'app: ogni domanda contiene <code>translations</code> con le lingue disponibili.</p>
-      </div>
-
-      <div class="panel qr-panel">
-        <div class="panel-header">
-          <h2 id="qrTitle">QR Download</h2>
-          <button id="copyShareLinkBtn" class="secondary small">Copia link</button>
-        </div>
-        <p class="hint" id="qrHint">Scansiona il QR per aprire la pagina con il JSON già pronto per il download.</p>
-        <div id="qrCode" class="qr-code"></div>
-        <input id="shareUrl" class="share-url" readonly />
+        <p class="hint" id="importHint">Puoi caricare un JSON esistente, modificarlo e riscaricarlo.</p>
       </div>
     </section>
   </main>

@@ -1,7 +1,7 @@
 :root {
   --bg: #121212;
-  --panel: rgba(18, 18, 18, 0.84);
-  --panel-strong: #1a1a1a;
+  --panel: #1a1a1a;
+  --panel-strong: #1f1f1f;
   --accent: #ffb800;
   --accent-2: #00ffc8;
   --accent-3: #ff0055;
@@ -9,7 +9,7 @@
   --muted: rgba(224, 224, 224, 0.72);
   --line: rgba(255, 255, 255, 0.1);
   --danger: #ff0055;
-  --shadow: 0 24px 80px rgba(0, 0, 0, 0.42);
+  --shadow: none;
   --radius: 22px;
 }
 
@@ -17,13 +17,9 @@
 html, body { height: 100%; }
 body {
   margin: 0;
-  font-family: Inter, Segoe UI, Arial, sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
   color: var(--text);
-  background:
-    radial-gradient(circle at top left, rgba(0, 255, 200, 0.16), transparent 28%),
-    radial-gradient(circle at top right, rgba(255, 184, 0, 0.14), transparent 24%),
-    radial-gradient(circle at bottom left, rgba(255, 0, 85, 0.08), transparent 30%),
-    linear-gradient(180deg, #0b0b0b 0%, var(--bg) 52%, #090909 100%);
+  background: var(--bg);
 }
 
 .shell {
@@ -67,11 +63,10 @@ h1 {
 }
 
 .hero-card, .panel, .question-card {
-  background: linear-gradient(180deg, rgba(26, 26, 26, 0.92), rgba(18, 18, 18, 0.96));
+  background: var(--panel);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  backdrop-filter: blur(10px);
 }
 
 .hero-card {
@@ -115,6 +110,16 @@ input:focus, select:focus, textarea:focus {
   margin-top: 16px;
 }
 
+#importJsonInput {
+  display: none;
+}
+
+.file-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
 button {
   border: 0;
   border-radius: 14px;
@@ -122,7 +127,7 @@ button {
   font: inherit;
   font-weight: 700;
   color: #08111f;
-  background: linear-gradient(135deg, var(--accent), #ffd86a);
+  background: var(--accent);
   cursor: pointer;
 }
 
@@ -145,18 +150,9 @@ button.danger {
   gap: 24px;
 }
 
-.preview-panel, .qr-panel {
-  margin-top: 24px;
-}
-
 .preview-panel {
   grid-column: 2;
   grid-row: 1;
-}
-
-.qr-panel {
-  grid-column: 2;
-  grid-row: 2;
 }
 
 .panel {
@@ -186,6 +182,33 @@ button.danger {
   margin-top: 18px;
 }
 
+.drop-zone {
+  margin-top: 14px;
+  padding: 16px;
+  border: 1px dashed rgba(0, 255, 200, 0.4);
+  border-radius: 18px;
+  background: #151515;
+  color: var(--muted);
+  display: grid;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.drop-zone strong {
+  color: var(--accent-2);
+  font-size: 0.98rem;
+}
+
+.drop-zone.drag-over {
+  border-color: var(--accent);
+  background: #191919;
+  color: var(--text);
+}
+
+.drop-zone.drag-over strong {
+  color: var(--accent);
+}
+
 .question-card {
   padding: 18px;
 }
@@ -201,7 +224,7 @@ button.danger {
   padding: 14px;
   border-radius: 16px;
   border: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.03);
+  background: #171717;
 }
 
 .translation-group h4 {
@@ -224,33 +247,10 @@ button.danger {
   color: var(--accent-2);
 }
 
-.qr-code {
-  display: grid;
-  place-items: center;
-  min-height: 280px;
-  padding: 16px;
-  margin: 14px 0 12px;
-  border-radius: 18px;
-  border: 1px dashed rgba(0, 255, 200, 0.22);
-  background: rgba(255, 255, 255, 0.02);
-  overflow: hidden;
-}
-
-.qr-code img, .qr-code canvas {
-  width: 240px !important;
-  height: 240px !important;
-  image-rendering: pixelated;
-}
-
-.share-url {
-  font-family: Consolas, Monaco, monospace;
-  font-size: 0.85rem;
-}
-
 @media (max-width: 1100px) {
   .hero, .workspace { grid-template-columns: 1fr; }
 
-  .preview-panel, .qr-panel {
+  .preview-panel {
     grid-column: auto;
     grid-row: auto;
   }
