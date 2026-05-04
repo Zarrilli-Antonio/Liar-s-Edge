@@ -4,16 +4,15 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Liar's Edge - Question Library Builder</title>
-  <meta name="description" content="Crea, importa, modifica e scarica file JSON multilingua per la libreria domande di Liar's Edge." />
+  <meta name="description" content="Create and download multilingual JSON files for the Liar's Edge question library." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <main class="shell">
     <section class="hero">
       <div>
-        <p class="eyebrow" id="eyebrowText">GitHub Pages ready</p>
         <h1 id="heroTitle">Question Library Builder</h1>
-        <p class="lead" id="heroLead">Create a multilingual JSON with translations for it, en, fr and es, then download it and load it into the app.</p>
+        <p class="lead" id="heroLead">Create a multilingual JSON with translations for it, en, fr and es, then download it.</p>
       </div>
       <div class="hero-card">
         <label for="uiLanguage" id="uiLanguageLabel">UI language</label>
@@ -36,13 +35,7 @@
         <div class="actions">
           <button id="addQuestionBtn" class="secondary">+ Add question</button>
           <button id="loadExampleBtn" class="secondary">Load example</button>
-          <label class="file-button secondary" for="importJsonInput" id="importJsonLabel">Load JSON</label>
-          <input id="importJsonInput" type="file" accept="application/json,.json" />
           <button id="downloadBtn">Download JSON</button>
-        </div>
-        <div id="dropZone" class="drop-zone" role="button" tabindex="0" aria-label="Load JSON by dragging and dropping">
-          <strong id="dropZoneTitle">Drop the JSON here</strong>
-          <span id="dropZoneHint">or use the Load JSON button</span>
         </div>
       </div>
     </section>

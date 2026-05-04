@@ -8,115 +8,91 @@ const languageLabels = {
 
 const uiStrings = {
   it: {
-    eyebrow: 'Pronto per GitHub Pages',
     heroTitle: 'Question Library Builder',
-    heroLead: 'Crea, importa e modifica un JSON multilingua con traduzioni per it, en, fr e es, poi riscaricalo.',
+    heroLead: 'Crea un JSON multilingua con traduzioni per it, en, fr e es, poi riscaricalo.',
     uiLanguage: 'Lingua interfaccia',
     libraryName: 'Nome libreria',
     defaultLanguage: 'Lingua predefinita',
     addQuestion: '+ Aggiungi domanda',
     loadExample: 'Carica esempio',
-    importJson: 'Carica JSON',
-    dropZoneTitle: 'Trascina qui il JSON',
-    dropZoneHint: 'oppure usa il pulsante Carica JSON',
     downloadJson: 'Scarica JSON',
     questions: 'Domande',
     preview: 'Anteprima JSON',
     copy: 'Copia',
     copied: 'Copiato',
     formatHint: 'Il formato finale è compatibile con l\'app: ogni domanda contiene translations con le lingue disponibili.',
-    importHint: 'Puoi caricare un JSON esistente, modificarlo e riscaricarlo.',
+    importHint: 'Puoi modificare il contenuto e scaricarlo di nuovo.',
     questionHeading: 'Domanda',
     remove: 'Rimuovi',
     questionCount: (count) => `${count} domande`,
     jsonLoading: 'Caricamento...',
-    importPrompt: 'Importa un JSON esistente per modificarlo.',
     templateTip: 'Ogni domanda può contenere translations con it/en/fr/es.',
-    importError: 'Il file JSON non è valido o non segue il formato previsto.',
     libraryPlaceholder: "Liar's Edge Custom Library"
   },
   en: {
-    eyebrow: 'GitHub Pages ready',
     heroTitle: 'Question Library Builder',
-    heroLead: 'Create, import and edit a multilingual JSON with it, en, fr and es translations, then download it again.',
+    heroLead: 'Create a multilingual JSON with it, en, fr and es translations, then download it again.',
     uiLanguage: 'UI language',
     libraryName: 'Library name',
     defaultLanguage: 'Default language',
     addQuestion: '+ Add question',
     loadExample: 'Load example',
-    importJson: 'Load JSON',
-    dropZoneTitle: 'Drop the JSON here',
-    dropZoneHint: 'or use the Load JSON button',
     downloadJson: 'Download JSON',
     questions: 'Questions',
     preview: 'JSON preview',
     copy: 'Copy',
     copied: 'Copied',
     formatHint: 'The final format is compatible with the app: every question contains translations for the available languages.',
-    importHint: 'You can load an existing JSON, edit it and download it again.',
+    importHint: 'You can edit the content and download it again.',
     questionHeading: 'Question',
     remove: 'Remove',
     questionCount: (count) => `${count} questions`,
     jsonLoading: 'Loading...',
-    importPrompt: 'Import an existing JSON to edit it.',
     templateTip: 'Each question can include translations with it/en/fr/es.',
-    importError: 'The JSON file is invalid or does not match the expected format.',
     libraryPlaceholder: "Liar's Edge Custom Library"
   },
   fr: {
-    eyebrow: 'Prêt pour GitHub Pages',
     heroTitle: 'Question Library Builder',
-    heroLead: 'Créez, importez et modifiez un JSON multilingue avec les traductions it, en, fr et es, puis téléchargez-le à nouveau.',
+    heroLead: 'Créez un JSON multilingue avec les traductions it, en, fr et es, puis téléchargez-le à nouveau.',
     uiLanguage: 'Langue de l\'interface',
     libraryName: 'Nom de la bibliothèque',
     defaultLanguage: 'Langue par défaut',
     addQuestion: '+ Ajouter une question',
     loadExample: 'Charger l\'exemple',
-    importJson: 'Charger JSON',
-    dropZoneTitle: 'Déposez le JSON ici',
-    dropZoneHint: 'ou utilisez le bouton Charger JSON',
     downloadJson: 'Télécharger JSON',
     questions: 'Questions',
     preview: 'Aperçu JSON',
     copy: 'Copier',
     copied: 'Copié',
     formatHint: 'Le format final est compatible avec l\'application : chaque question contient translations avec les langues disponibles.',
-    importHint: 'Vous pouvez charger un JSON existant, le modifier puis le télécharger à nouveau.',
+    importHint: 'Vous pouvez modifier le contenu puis le télécharger à nouveau.',
     questionHeading: 'Question',
     remove: 'Supprimer',
     questionCount: (count) => `${count} questions`,
     jsonLoading: 'Chargement...',
-    importPrompt: 'Importez un JSON existant pour le modifier.',
     templateTip: 'Chaque question peut inclure des translations avec it/en/fr/es.',
-    importError: 'Le fichier JSON est invalide ou ne respecte pas le format attendu.',
     libraryPlaceholder: "Liar's Edge Custom Library"
   },
   es: {
-    eyebrow: 'Listo para GitHub Pages',
     heroTitle: 'Question Library Builder',
-    heroLead: 'Crea, importa y modifica un JSON multilingüe con traducciones para it, en, fr y es, luego descárgalo otra vez.',
+    heroLead: 'Crea un JSON multilingüe con traducciones para it, en, fr y es, luego descárgalo otra vez.',
     uiLanguage: 'Idioma de la interfaz',
     libraryName: 'Nombre de la librería',
     defaultLanguage: 'Idioma predeterminado',
     addQuestion: '+ Añadir pregunta',
     loadExample: 'Cargar ejemplo',
-    importJson: 'Cargar JSON',
-    dropZoneTitle: 'Suelta el JSON aquí',
-    dropZoneHint: 'o usa el botón Cargar JSON',
     downloadJson: 'Descargar JSON',
     questions: 'Preguntas',
     preview: 'Vista previa JSON',
     copy: 'Copiar',
     copied: 'Copiado',
     formatHint: 'El formato final es compatible con la app: cada pregunta contiene translations con los idiomas disponibles.',
-    importHint: 'Puedes cargar un JSON existente, modificarlo y descargarlo otra vez.',
+    importHint: 'Puedes modificar el contenido y descargarlo otra vez.',
     questionHeading: 'Pregunta',
     remove: 'Eliminar',
     questionCount: (count) => `${count} preguntas`,
     jsonLoading: 'Cargando...',
-    importPrompt: 'Importa un JSON existente para editarlo.',
     templateTip: 'Cada pregunta puede incluir translations con it/en/fr/es.',
-    importError: 'El archivo JSON no es válido o no sigue el formato esperado.',
     libraryPlaceholder: "Liar's Edge Custom Library"
   }
 };
@@ -129,7 +105,6 @@ const state = {
 };
 
 const els = {
-  eyebrowText: document.getElementById('eyebrowText'),
   heroTitle: document.getElementById('heroTitle'),
   heroLead: document.getElementById('heroLead'),
   uiLanguageLabel: document.getElementById('uiLanguageLabel'),
@@ -140,11 +115,6 @@ const els = {
   defaultLanguage: document.getElementById('defaultLanguage'),
   addQuestionBtn: document.getElementById('addQuestionBtn'),
   loadExampleBtn: document.getElementById('loadExampleBtn'),
-  importJsonLabel: document.getElementById('importJsonLabel'),
-  importJsonInput: document.getElementById('importJsonInput'),
-  dropZone: document.getElementById('dropZone'),
-  dropZoneTitle: document.getElementById('dropZoneTitle'),
-  dropZoneHint: document.getElementById('dropZoneHint'),
   downloadBtn: document.getElementById('downloadBtn'),
   questionsTitle: document.getElementById('questionsTitle'),
   previewTitle: document.getElementById('previewTitle'),
@@ -156,11 +126,6 @@ const els = {
   questionCount: document.getElementById('questionCount'),
   questionTemplate: document.getElementById('questionTemplate')
 };
-
-function preventDefault(event) {
-  event.preventDefault();
-  event.stopPropagation();
-}
 
 function t(key, ...args) {
   const pack = uiStrings[state.uiLanguage] || uiStrings.it;
@@ -247,43 +212,6 @@ function loadExample() {
   render();
 }
 
-function loadImportedJson(data) {
-  if (Array.isArray(data)) {
-    data = { questions: data };
-  }
-
-  if (!data || typeof data !== 'object') {
-    throw new Error(t('importError'));
-  }
-
-  const questions = Array.isArray(data.questions)
-    ? data.questions
-    : Array.isArray(data.items)
-      ? data.items
-      : [];
-  state.libraryName = String(data.libraryName ?? t('libraryPlaceholder')).trim() || t('libraryPlaceholder');
-  state.defaultLanguage = languages.includes(data.language) ? data.language : 'en';
-  state.questions = questions.map(normalizeQuestionItem).filter((entry) =>
-    languages.some((code) => entry.translations[code].question || entry.translations[code].correctAnswer)
-  );
-
-  syncInputs();
-  render();
-}
-
-async function readFileText(file) {
-  if (typeof file.text === 'function') {
-    return file.text();
-  }
-
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.onload = () => resolve(String(reader.result ?? ''));
-    reader.onerror = () => reject(reader.error || new Error(t('importError')));
-    reader.readAsText(file);
-  });
-}
-
 function addQuestion(question = createBlankQuestion()) {
   state.questions.push(question);
   render();
@@ -303,7 +231,6 @@ function syncInputs() {
 
 function updateStaticText() {
   document.documentElement.lang = state.uiLanguage;
-  els.eyebrowText.textContent = t('eyebrow');
   els.heroTitle.textContent = t('heroTitle');
   els.heroLead.textContent = t('heroLead');
   els.uiLanguageLabel.textContent = t('uiLanguage');
@@ -311,9 +238,6 @@ function updateStaticText() {
   els.defaultLanguageLabel.textContent = t('defaultLanguage');
   els.addQuestionBtn.textContent = t('addQuestion');
   els.loadExampleBtn.textContent = t('loadExample');
-  els.importJsonLabel.textContent = t('importJson');
-  els.dropZoneTitle.textContent = t('dropZoneTitle');
-  els.dropZoneHint.textContent = t('dropZoneHint');
   els.downloadBtn.textContent = t('downloadJson');
   els.questionsTitle.textContent = t('questions');
   els.previewTitle.textContent = t('preview');
@@ -406,42 +330,6 @@ async function copyJson() {
   setTimeout(() => (els.copyBtn.textContent = t('copy')), 1400);
 }
 
-async function importJsonFile(file) {
-  if (!file) return;
-
-  let text;
-  try {
-    text = await readFileText(file);
-  } catch {
-    alert(t('importError'));
-    return;
-  }
-
-  let parsed;
-  try {
-    parsed = JSON.parse(text);
-  } catch {
-    alert(t('importError'));
-    return;
-  }
-
-  try {
-    loadImportedJson(parsed);
-  } catch {
-    alert(t('importError'));
-  }
-}
-
-function handleDrop(event) {
-  preventDefault(event);
-  els.dropZone.classList.remove('drag-over');
-
-  const [file] = event.dataTransfer?.files || [];
-  if (file) {
-    importJsonFile(file);
-  }
-}
-
 els.uiLanguage.addEventListener('change', () => {
   state.uiLanguage = els.uiLanguage.value;
   syncInputs();
@@ -457,36 +345,8 @@ els.defaultLanguage.addEventListener('change', () => {
 });
 els.addQuestionBtn.addEventListener('click', () => addQuestion());
 els.loadExampleBtn.addEventListener('click', loadExample);
-els.importJsonInput.addEventListener('change', (event) => {
-  const [file] = event.target.files || [];
-  importJsonFile(file);
-  event.target.value = '';
-});
-els.dropZone.addEventListener('click', () => els.importJsonInput.click());
-els.dropZone.addEventListener('keydown', (event) => {
-  if (event.key === 'Enter' || event.key === ' ') {
-    preventDefault(event);
-    els.importJsonInput.click();
-  }
-});
-els.dropZone.addEventListener('dragenter', (event) => {
-  preventDefault(event);
-  els.dropZone.classList.add('drag-over');
-});
-els.dropZone.addEventListener('dragover', (event) => {
-  preventDefault(event);
-  els.dropZone.classList.add('drag-over');
-});
-els.dropZone.addEventListener('dragleave', (event) => {
-  preventDefault(event);
-  els.dropZone.classList.remove('drag-over');
-});
-els.dropZone.addEventListener('drop', handleDrop);
 els.downloadBtn.addEventListener('click', downloadJson);
 els.copyBtn.addEventListener('click', copyJson);
-
-document.addEventListener('dragover', preventDefault);
-document.addEventListener('drop', preventDefault);
 
 window.addEventListener('DOMContentLoaded', () => {
   if (state.questions.length === 0) {
