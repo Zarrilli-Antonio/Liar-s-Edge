@@ -157,6 +157,11 @@ const els = {
   questionTemplate: document.getElementById('questionTemplate')
 };
 
+function preventDefault(event) {
+  event.preventDefault();
+  event.stopPropagation();
+}
+
 function t(key, ...args) {
   const pack = uiStrings[state.uiLanguage] || uiStrings.it;
   const value = pack[key];
@@ -219,7 +224,7 @@ function normalizeQuestionItem(item) {
 
 function loadExample() {
   state.libraryName = "Liar's Edge Multilingual Library";
-  state.defaultLanguage = 'it';
+  state.defaultLanguage = 'en';
   state.questions = [
     {
       translations: {
@@ -243,19 +248,40 @@ function loadExample() {
 }
 
 function loadImportedJson(data) {
+  if (Array.isArray(data)) {
+    data = { questions: data };
+  }
+
   if (!data || typeof data !== 'object') {
     throw new Error(t('importError'));
   }
 
-  const questions = Array.isArray(data.questions) ? data.questions : [];
+  const questions = Array.isArray(data.questions)
+    ? data.questions
+    : Array.isArray(data.items)
+      ? data.items
+      : [];
   state.libraryName = String(data.libraryName ?? t('libraryPlaceholder')).trim() || t('libraryPlaceholder');
-  state.defaultLanguage = languages.includes(data.language) ? data.language : 'it';
+  state.defaultLanguage = languages.includes(data.language) ? data.language : 'en';
   state.questions = questions.map(normalizeQuestionItem).filter((entry) =>
     languages.some((code) => entry.translations[code].question || entry.translations[code].correctAnswer)
   );
 
   syncInputs();
   render();
+}
+
+async function readFileText(file) {
+  if (typeof file.text === 'function') {
+    return file.text();
+  }
+
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(String(reader.result ?? ''));
+    reader.onerror = () => reject(reader.error || new Error(t('importError')));
+    reader.readAsText(file);
+  });
 }
 
 function addQuestion(question = createBlankQuestion()) {
@@ -383,7 +409,14 @@ async function copyJson() {
 async function importJsonFile(file) {
   if (!file) return;
 
-  const text = await file.text();
+  let text;
+  try {
+    text = await readFileText(file);
+  } catch {
+    alert(t('importError'));
+    return;
+  }
+
   let parsed;
   try {
     parsed = JSON.parse(text);
@@ -400,8 +433,7 @@ async function importJsonFile(file) {
 }
 
 function handleDrop(event) {
-  event.preventDefault();
-  event.stopPropagation();
+  preventDefault(event);
   els.dropZone.classList.remove('drag-over');
 
   const [file] = event.dataTransfer?.files || [];
@@ -433,25 +465,28 @@ els.importJsonInput.addEventListener('change', (event) => {
 els.dropZone.addEventListener('click', () => els.importJsonInput.click());
 els.dropZone.addEventListener('keydown', (event) => {
   if (event.key === 'Enter' || event.key === ' ') {
-    event.preventDefault();
+    preventDefault(event);
     els.importJsonInput.click();
   }
 });
 els.dropZone.addEventListener('dragenter', (event) => {
-  event.preventDefault();
+  preventDefault(event);
   els.dropZone.classList.add('drag-over');
 });
 els.dropZone.addEventListener('dragover', (event) => {
-  event.preventDefault();
+  preventDefault(event);
   els.dropZone.classList.add('drag-over');
 });
 els.dropZone.addEventListener('dragleave', (event) => {
-  event.preventDefault();
+  preventDefault(event);
   els.dropZone.classList.remove('drag-over');
 });
 els.dropZone.addEventListener('drop', handleDrop);
 els.downloadBtn.addEventListener('click', downloadJson);
 els.copyBtn.addEventListener('click', copyJson);
+
+document.addEventListener('dragover', preventDefault);
+document.addEventListener('drop', preventDefault);
 
 window.addEventListener('DOMContentLoaded', () => {
   if (state.questions.length === 0) {

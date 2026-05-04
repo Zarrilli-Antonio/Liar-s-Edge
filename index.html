@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="it">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -13,10 +13,10 @@
       <div>
         <p class="eyebrow" id="eyebrowText">GitHub Pages ready</p>
         <h1 id="heroTitle">Question Library Builder</h1>
-        <p class="lead" id="heroLead">Crea un JSON multilingua con traduzioni per it, en, fr e es, poi scaricalo e caricalo nell'app.</p>
+        <p class="lead" id="heroLead">Create a multilingual JSON with translations for it, en, fr and es, then download it and load it into the app.</p>
       </div>
       <div class="hero-card">
-        <label for="uiLanguage" id="uiLanguageLabel">Lingua interfaccia</label>
+        <label for="uiLanguage" id="uiLanguageLabel">UI language</label>
         <select id="uiLanguage">
           <option value="it">Italiano</option>
           <option value="en">English</option>
@@ -24,9 +24,9 @@
           <option value="es">Español</option>
         </select>
 
-        <label for="libraryName" id="libraryNameLabel">Nome libreria</label>
+        <label for="libraryName" id="libraryNameLabel">Library name</label>
         <input id="libraryName" type="text" value="Liar's Edge Custom Library" />
-        <label for="defaultLanguage" id="defaultLanguageLabel">Lingua predefinita</label>
+        <label for="defaultLanguage" id="defaultLanguageLabel">Default language</label>
         <select id="defaultLanguage">
           <option value="it">Italiano</option>
           <option value="en">English</option>
@@ -34,15 +34,15 @@
           <option value="es">Español</option>
         </select>
         <div class="actions">
-          <button id="addQuestionBtn" class="secondary">+ Aggiungi domanda</button>
-          <button id="loadExampleBtn" class="secondary">Carica esempio</button>
-          <label class="file-button secondary" for="importJsonInput" id="importJsonLabel">Carica JSON</label>
+          <button id="addQuestionBtn" class="secondary">+ Add question</button>
+          <button id="loadExampleBtn" class="secondary">Load example</button>
+          <label class="file-button secondary" for="importJsonInput" id="importJsonLabel">Load JSON</label>
           <input id="importJsonInput" type="file" accept="application/json,.json" />
-          <button id="downloadBtn">Scarica JSON</button>
+          <button id="downloadBtn">Download JSON</button>
         </div>
-        <div id="dropZone" class="drop-zone" role="button" tabindex="0" aria-label="Carica JSON tramite trascinamento">
-          <strong id="dropZoneTitle">Trascina qui il JSON</strong>
-          <span id="dropZoneHint">oppure usa il pulsante Carica JSON</span>
+        <div id="dropZone" class="drop-zone" role="button" tabindex="0" aria-label="Load JSON by dragging and dropping">
+          <strong id="dropZoneTitle">Drop the JSON here</strong>
+          <span id="dropZoneHint">or use the Load JSON button</span>
         </div>
       </div>
     </section>
@@ -50,20 +50,20 @@
     <section class="workspace">
       <div class="panel">
         <div class="panel-header">
-          <h2 id="questionsTitle">Domande</h2>
-          <span id="questionCount" class="badge">0 domande</span>
+          <h2 id="questionsTitle">Questions</h2>
+          <span id="questionCount" class="badge">0 questions</span>
         </div>
         <div id="questionsContainer" class="questions"></div>
       </div>
 
       <div class="panel preview-panel">
         <div class="panel-header">
-          <h2 id="previewTitle">Anteprima JSON</h2>
-          <button id="copyBtn" class="secondary small">Copia</button>
+          <h2 id="previewTitle">JSON preview</h2>
+          <button id="copyBtn" class="secondary small">Copy</button>
         </div>
         <textarea id="jsonPreview" readonly spellcheck="false"></textarea>
-        <p class="hint" id="formatHint">Il formato finale è compatibile con l'app: ogni domanda contiene <code>translations</code> con le lingue disponibili.</p>
-        <p class="hint" id="importHint">Puoi caricare un JSON esistente, modificarlo e riscaricarlo.</p>
+        <p class="hint" id="formatHint">The final format is compatible with the app: every question contains <code>translations</code> with the available languages.</p>
+        <p class="hint" id="importHint">You can load an existing JSON, edit it and download it again.</p>
       </div>
     </section>
   </main>
@@ -73,9 +73,9 @@
       <div class="question-top">
         <div>
           <p class="question-index"></p>
-          <h3 class="questionHeading">Domanda</h3>
+          <h3 class="questionHeading">Question</h3>
         </div>
-        <button class="removeBtn danger" type="button">Rimuovi</button>
+        <button class="removeBtn danger" type="button">Remove</button>
       </div>
       <div class="translation-grid">
         <div class="translation-group" data-lang="it">
