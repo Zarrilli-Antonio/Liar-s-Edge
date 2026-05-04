@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Liar's Edge - Question Library Builder</title>
+  <meta name="description" content="Crea e scarica file JSON multilingua per la libreria domande di Liar's Edge." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">GitHub Pages ready</p>
+        <h1>Question Library Builder</h1>
+        <p class="lead">Crea un JSON multilingua con traduzioni per it, en, fr e es, poi scaricalo e caricalo nell'app.</p>
+      </div>
+      <div class="hero-card">
+        <label for="libraryName">Nome libreria</label>
+        <input id="libraryName" type="text" value="Liar's Edge Custom Library" />
+        <label for="defaultLanguage">Lingua predefinita</label>
+        <select id="defaultLanguage">
+          <option value="it">Italiano</option>
+          <option value="en">English</option>
+          <option value="fr">Français</option>
+          <option value="es">Español</option>
+        </select>
+        <div class="actions">
+          <button id="addQuestionBtn" class="secondary">+ Aggiungi domanda</button>
+          <button id="loadExampleBtn" class="secondary">Carica esempio</button>
+          <button id="downloadBtn">Scarica JSON</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="workspace">
+      <div class="panel">
+        <div class="panel-header">
+          <h2>Domande</h2>
+          <span id="questionCount" class="badge">0 domande</span>
+        </div>
+        <div id="questionsContainer" class="questions"></div>
+      </div>
+
+      <div class="panel preview-panel">
+        <div class="panel-header">
+          <h2>Anteprima JSON</h2>
+          <button id="copyBtn" class="secondary small">Copia</button>
+        </div>
+        <textarea id="jsonPreview" readonly spellcheck="false"></textarea>
+        <p class="hint">Il formato finale è compatibile con l'app: ogni domanda contiene <code>translations</code> con le lingue disponibili.</p>
+      </div>
+    </section>
+  </main>
+
+  <template id="questionTemplate">
+    <article class="question-card">
+      <div class="question-top">
+        <div>
+          <p class="question-index"></p>
+          <h3>Domanda</h3>
+        </div>
+        <button class="removeBtn danger" type="button">Rimuovi</button>
+      </div>
+      <div class="translation-grid">
+        <div class="translation-group" data-lang="it">
+          <h4>Italiano</h4>
+          <label>Testo</label>
+          <input type="text" class="q-text" placeholder="Qual è la capitale della Francia?" />
+          <label>Risposta corretta</label>
+          <input type="text" class="a-text" placeholder="Parigi" />
+        </div>
+        <div class="translation-group" data-lang="en">
+          <h4>English</h4>
+          <label>Question</label>
+          <input type="text" class="q-text" placeholder="What is the capital of France?" />
+          <label>Correct answer</label>
+          <input type="text" class="a-text" placeholder="Paris" />
+        </div>
+        <div class="translation-group" data-lang="fr">
+          <h4>Français</h4>
+          <label>Question</label>
+          <input type="text" class="q-text" placeholder="Quelle est la capitale de la France ?" />
+          <label>Bonne réponse</label>
+          <input type="text" class="a-text" placeholder="Paris" />
+        </div>
+        <div class="translation-group" data-lang="es">
+          <h4>Español</h4>
+          <label>Pregunta</label>
+          <input type="text" class="q-text" placeholder="¿Cuál es la capital de Francia?" />
+          <label>Respuesta correcta</label>
+          <input type="text" class="a-text" placeholder="París" />
+        </div>
+      </div>
+    </article>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
