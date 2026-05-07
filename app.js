@@ -8,6 +8,26 @@ const languageLabels = {
 
 const uiStrings = {
   it: {
+    // Navigation
+    navHome: 'Home',
+    navBuilder: 'Question Builder',
+    
+    // Home page
+    homeTitle: 'About Liar\'s Edge',
+    homeDescription: 'A bluffing and deduction game for 2-8 players on a single device.',
+    howPlayTitle: 'How It Works',
+    howPlayDesc: 'One player asks a question. Others answer—but only one tells the truth! The questioner scores points by accusing liars without accusing the truth-teller.',
+    customQuestionsTitle: 'Custom Questions',
+    customQuestionsDesc: 'Create your own question library with multilingual support for Italian, English, French, and Spanish.',
+    storeQuestionsTitle: 'Import & Save',
+    storeQuestionsDesc: 'Build or download question libraries as JSON files. Save them in the app to use across multiple games.',
+    offlineTitle: 'Fully Offline',
+    offlineDesc: 'Play anywhere with no internet required. All data is stored locally on your device.',
+    ctaTitle: 'Ready to Play?',
+    ctaDescription: 'Download the Liar\'s Edge app or create a question library using the builder.',
+    gotoBuilder: 'Go to Question Builder',
+    
+    // Builder
     heroTitle: 'Question Library Builder',
     heroLead: 'Crea un JSON multilingua con traduzioni per it, en, fr e es, poi riscaricalo.',
     uiLanguage: 'Lingua interfaccia',
@@ -30,6 +50,26 @@ const uiStrings = {
     libraryPlaceholder: "Liar's Edge Custom Library"
   },
   en: {
+    // Navigation
+    navHome: 'Home',
+    navBuilder: 'Question Builder',
+    
+    // Home page
+    homeTitle: 'About Liar\'s Edge',
+    homeDescription: 'A bluffing and deduction game for 2-8 players on a single device.',
+    howPlayTitle: 'How It Works',
+    howPlayDesc: 'One player asks a question. Others answer—but only one tells the truth! The questioner scores points by accusing liars without accusing the truth-teller.',
+    customQuestionsTitle: 'Custom Questions',
+    customQuestionsDesc: 'Create your own question library with multilingual support for Italian, English, French, and Spanish.',
+    storeQuestionsTitle: 'Import & Save',
+    storeQuestionsDesc: 'Build or download question libraries as JSON files. Save them in the app to use across multiple games.',
+    offlineTitle: 'Fully Offline',
+    offlineDesc: 'Play anywhere with no internet required. All data is stored locally on your device.',
+    ctaTitle: 'Ready to Play?',
+    ctaDescription: 'Download the Liar\'s Edge app or create a question library using the builder.',
+    gotoBuilder: 'Go to Question Builder',
+    
+    // Builder
     heroTitle: 'Question Library Builder',
     heroLead: 'Create a multilingual JSON with it, en, fr and es translations, then download it again.',
     uiLanguage: 'UI language',
@@ -52,6 +92,26 @@ const uiStrings = {
     libraryPlaceholder: "Liar's Edge Custom Library"
   },
   fr: {
+    // Navigation
+    navHome: 'Accueil',
+    navBuilder: 'Générateur de Questions',
+    
+    // Home page
+    homeTitle: 'À propos de Liar\'s Edge',
+    homeDescription: 'Un jeu de bluff et de déduction pour 2-8 joueurs sur un seul appareil.',
+    howPlayTitle: 'Comment ça Marche',
+    howPlayDesc: 'Un joueur pose une question. Les autres répondent—mais seul l\'un dit la vérité ! Le questionneur gagne des points en accusant les menteurs sans accuser le diseur de vérité.',
+    customQuestionsTitle: 'Questions Personnalisées',
+    customQuestionsDesc: 'Créez votre propre bibliothèque de questions avec support multilingue pour l\'italien, l\'anglais, le français et l\'espagnol.',
+    storeQuestionsTitle: 'Importer et Enregistrer',
+    storeQuestionsDesc: 'Construisez ou téléchargez des bibliothèques de questions en tant que fichiers JSON. Enregistrez-les dans l\'application pour les utiliser dans plusieurs jeux.',
+    offlineTitle: 'Entièrement Hors Ligne',
+    offlineDesc: 'Jouez n\'importe où sans connexion Internet requise. Toutes les données sont stockées localement sur votre appareil.',
+    ctaTitle: 'Prêt à Jouer ?',
+    ctaDescription: 'Téléchargez l\'application Liar\'s Edge ou créez une bibliothèque de questions à l\'aide du générateur.',
+    gotoBuilder: 'Aller au Générateur de Questions',
+    
+    // Builder
     heroTitle: 'Question Library Builder',
     heroLead: 'Créez un JSON multilingue avec les traductions it, en, fr et es, puis téléchargez-le à nouveau.',
     uiLanguage: 'Langue de l\'interface',
@@ -74,6 +134,26 @@ const uiStrings = {
     libraryPlaceholder: "Liar's Edge Custom Library"
   },
   es: {
+    // Navigation
+    navHome: 'Inicio',
+    navBuilder: 'Generador de Preguntas',
+    
+    // Home page
+    homeTitle: 'Acerca de Liar\'s Edge',
+    homeDescription: 'Un juego de bluff y deducción para 2-8 jugadores en un solo dispositivo.',
+    howPlayTitle: 'Cómo Funciona',
+    howPlayDesc: '¡Un jugador hace una pregunta. Otros responden—pero solo uno dice la verdad! El interrogador gana puntos acusando a los mentirosos sin acusar al que dice la verdad.',
+    customQuestionsTitle: 'Preguntas Personalizadas',
+    customQuestionsDesc: 'Crea tu propia biblioteca de preguntas con soporte multilingüe para italiano, inglés, francés y español.',
+    storeQuestionsTitle: 'Importar y Guardar',
+    storeQuestionsDesc: 'Construye o descarga bibliotecas de preguntas como archivos JSON. Guárdalos en la aplicación para usarlos en múltiples juegos.',
+    offlineTitle: 'Totalmente Offline',
+    offlineDesc: 'Juega en cualquier lugar sin conexión a Internet. Todos los datos se almacenan localmente en tu dispositivo.',
+    ctaTitle: '¿Listo para Jugar?',
+    ctaDescription: 'Descarga la aplicación Liar\'s Edge o crea una biblioteca de preguntas usando el generador.',
+    gotoBuilder: 'Ir al Generador de Preguntas',
+    
+    // Builder
     heroTitle: 'Question Library Builder',
     heroLead: 'Crea un JSON multilingüe con traducciones para it, en, fr y es, luego descárgalo otra vez.',
     uiLanguage: 'Idioma de la interfaz',
@@ -98,13 +178,35 @@ const uiStrings = {
 };
 
 const state = {
-  uiLanguage: 'en',
+  uiLanguage: 'en',  // Default to English
   libraryName: "Liar's Edge Custom Library",
   defaultLanguage: 'en',
   questions: []
 };
 
 const els = {
+  // Navigation
+  navHome: document.getElementById('navHome'),
+  navBuilder: document.getElementById('navBuilder'),
+  homePage: document.getElementById('homePage'),
+  builderPage: document.getElementById('builderPage'),
+  gotoBuilderBtn: document.getElementById('gotoBuilderBtn'),
+  
+  // Home page
+  homeTitle: document.getElementById('homeTitle'),
+  homeDescription: document.getElementById('homeDescription'),
+  howPlayTitle: document.getElementById('howPlayTitle'),
+  howPlayDesc: document.getElementById('howPlayDesc'),
+  customQuestionsTitle: document.getElementById('customQuestionsTitle'),
+  customQuestionsDesc: document.getElementById('customQuestionsDesc'),
+  storeQuestionsTitle: document.getElementById('storeQuestionsTitle'),
+  storeQuestionsDesc: document.getElementById('storeQuestionsDesc'),
+  offlineTitle: document.getElementById('offlineTitle'),
+  offlineDesc: document.getElementById('offlineDesc'),
+  ctaTitle: document.getElementById('ctaTitle'),
+  ctaDescription: document.getElementById('ctaDescription'),
+  
+  // Builder page
   heroTitle: document.getElementById('heroTitle'),
   heroLead: document.getElementById('heroLead'),
   uiLanguageLabel: document.getElementById('uiLanguageLabel'),
@@ -231,20 +333,56 @@ function syncInputs() {
 
 function updateStaticText() {
   document.documentElement.lang = state.uiLanguage;
-  els.heroTitle.textContent = t('heroTitle');
-  els.heroLead.textContent = t('heroLead');
-  els.uiLanguageLabel.textContent = t('uiLanguage');
-  els.libraryNameLabel.textContent = t('libraryName');
-  els.defaultLanguageLabel.textContent = t('defaultLanguage');
-  els.addQuestionBtn.textContent = t('addQuestion');
-  els.loadExampleBtn.textContent = t('loadExample');
-  els.downloadBtn.textContent = t('downloadJson');
-  els.questionsTitle.textContent = t('questions');
-  els.previewTitle.textContent = t('preview');
-  els.copyBtn.textContent = t('copy');
-  els.formatHint.innerHTML = `${t('formatHint')} <code>translations</code>.`;
-  els.importHint.textContent = t('importHint');
-  els.questionCount.textContent = t('questionCount', buildJson().questions.length);
+  
+  // Home page text
+  if (els.homeTitle) els.homeTitle.textContent = t('homeTitle');
+  if (els.homeDescription) els.homeDescription.textContent = t('homeDescription');
+  if (els.howPlayTitle) els.howPlayTitle.textContent = t('howPlayTitle');
+  if (els.howPlayDesc) els.howPlayDesc.textContent = t('howPlayDesc');
+  if (els.customQuestionsTitle) els.customQuestionsTitle.textContent = t('customQuestionsTitle');
+  if (els.customQuestionsDesc) els.customQuestionsDesc.textContent = t('customQuestionsDesc');
+  if (els.storeQuestionsTitle) els.storeQuestionsTitle.textContent = t('storeQuestionsTitle');
+  if (els.storeQuestionsDesc) els.storeQuestionsDesc.textContent = t('storeQuestionsDesc');
+  if (els.offlineTitle) els.offlineTitle.textContent = t('offlineTitle');
+  if (els.offlineDesc) els.offlineDesc.textContent = t('offlineDesc');
+  if (els.ctaTitle) els.ctaTitle.textContent = t('ctaTitle');
+  if (els.ctaDescription) els.ctaDescription.textContent = t('ctaDescription');
+  if (els.gotoBuilderBtn) els.gotoBuilderBtn.textContent = t('gotoBuilder');
+  
+  // Builder page text
+  if (els.heroTitle) els.heroTitle.textContent = t('heroTitle');
+  if (els.heroLead) els.heroLead.textContent = t('heroLead');
+  if (els.uiLanguageLabel) els.uiLanguageLabel.textContent = t('uiLanguage');
+  if (els.libraryNameLabel) els.libraryNameLabel.textContent = t('libraryName');
+  if (els.defaultLanguageLabel) els.defaultLanguageLabel.textContent = t('defaultLanguage');
+  if (els.addQuestionBtn) els.addQuestionBtn.textContent = t('addQuestion');
+  if (els.loadExampleBtn) els.loadExampleBtn.textContent = t('loadExample');
+  if (els.downloadBtn) els.downloadBtn.textContent = t('downloadJson');
+  if (els.questionsTitle) els.questionsTitle.textContent = t('questions');
+  if (els.previewTitle) els.previewTitle.textContent = t('preview');
+  if (els.copyBtn) els.copyBtn.textContent = t('copy');
+  if (els.formatHint) els.formatHint.innerHTML = `${t('formatHint')} <code>translations</code>.`;
+  if (els.importHint) els.importHint.textContent = t('importHint');
+  if (els.questionCount) els.questionCount.textContent = t('questionCount', buildJson().questions.length);
+}
+
+function switchPage(pageId) {
+  // Hide all pages
+  if (els.homePage) els.homePage.classList.remove('active');
+  if (els.builderPage) els.builderPage.classList.remove('active');
+  
+  // Deactivate all nav buttons
+  if (els.navHome) els.navHome.classList.remove('active');
+  if (els.navBuilder) els.navBuilder.classList.remove('active');
+  
+  // Show selected page and activate button
+  if (pageId === 'home') {
+    if (els.homePage) els.homePage.classList.add('active');
+    if (els.navHome) els.navHome.classList.add('active');
+  } else if (pageId === 'builder') {
+    if (els.builderPage) els.builderPage.classList.add('active');
+    if (els.navBuilder) els.navBuilder.classList.add('active');
+  }
 }
 
 function collectStateFromForm() {
@@ -348,10 +486,22 @@ els.loadExampleBtn.addEventListener('click', loadExample);
 els.downloadBtn.addEventListener('click', downloadJson);
 els.copyBtn.addEventListener('click', copyJson);
 
+// Navigation buttons
+if (els.navHome) {
+  els.navHome.addEventListener('click', () => switchPage('home'));
+}
+if (els.navBuilder) {
+  els.navBuilder.addEventListener('click', () => switchPage('builder'));
+}
+if (els.gotoBuilderBtn) {
+  els.gotoBuilderBtn.addEventListener('click', () => switchPage('builder'));
+}
+
 window.addEventListener('DOMContentLoaded', () => {
   if (state.questions.length === 0) {
     addQuestion();
   }
   syncInputs();
   render();
+  switchPage('home');  // Start on home page
 });

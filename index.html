@@ -8,56 +8,107 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <main class="shell">
-    <section class="hero">
-      <div>
-        <h1 id="heroTitle">Question Library Builder</h1>
-        <p class="lead" id="heroLead">Create a multilingual JSON with translations for it, en, fr and es, then download it.</p>
-      </div>
-      <div class="hero-card">
-        <label for="uiLanguage" id="uiLanguageLabel">UI language</label>
-        <select id="uiLanguage">
-          <option value="it">Italiano</option>
-          <option value="en">English</option>
-          <option value="fr">Français</option>
-          <option value="es">Español</option>
-        </select>
+  <nav class="nav-bar">
+    <div class="nav-container">
+      <h2 class="nav-logo">Liar's Edge</h2>
+      <ul class="nav-links">
+        <li><button class="nav-btn active" data-page="home" id="navHome">Home</button></li>
+        <li><button class="nav-btn" data-page="builder" id="navBuilder">Question Builder</button></li>
+      </ul>
+    </div>
+  </nav>
 
-        <label for="libraryName" id="libraryNameLabel">Library name</label>
-        <input id="libraryName" type="text" value="Liar's Edge Custom Library" />
-        <label for="defaultLanguage" id="defaultLanguageLabel">Default language</label>
-        <select id="defaultLanguage">
-          <option value="it">Italiano</option>
-          <option value="en">English</option>
-          <option value="fr">Français</option>
-          <option value="es">Español</option>
-        </select>
-        <div class="actions">
-          <button id="addQuestionBtn" class="secondary">+ Add question</button>
-          <button id="loadExampleBtn" class="secondary">Load example</button>
-          <button id="downloadBtn">Download JSON</button>
+  <main class="shell">
+    <!-- HOME PAGE -->
+    <section id="homePage" class="page active">
+      <div class="hero">
+        <div>
+          <h1 id="homeTitle">About Liar's Edge</h1>
+          <p class="lead" id="homeDescription">A bluffing and deduction game for 2-8 players on a single device.</p>
         </div>
+      </div>
+
+      <div class="home-grid">
+        <div class="card">
+          <h3 id="howPlayTitle">How It Works</h3>
+          <p id="howPlayDesc">One player asks a question. Others answer—but only one tells the truth! The questioner scores points by accusing liars without accusing the truth-teller.</p>
+        </div>
+
+        <div class="card">
+          <h3 id="customQuestionsTitle">Custom Questions</h3>
+          <p id="customQuestionsDesc">Create your own question library with multilingual support for Italian, English, French, and Spanish.</p>
+        </div>
+
+        <div class="card">
+          <h3 id="storeQuestionsTitle">Import & Save</h3>
+          <p id="storeQuestionsDesc">Build or download question libraries as JSON files. Save them in the app to use across multiple games.</p>
+        </div>
+
+        <div class="card">
+          <h3 id="offlineTitle">Fully Offline</h3>
+          <p id="offlineDesc">Play anywhere with no internet required. All data is stored locally on your device.</p>
+        </div>
+      </div>
+
+      <div class="cta-section">
+        <h2 id="ctaTitle">Ready to Play?</h2>
+        <p id="ctaDescription">Download the Liar's Edge app or create a question library using the builder.</p>
+        <button class="btn-primary large" id="gotoBuilderBtn">Go to Question Builder</button>
       </div>
     </section>
 
-    <section class="workspace">
-      <div class="panel">
-        <div class="panel-header">
-          <h2 id="questionsTitle">Questions</h2>
-          <span id="questionCount" class="badge">0 questions</span>
+    <!-- BUILDER PAGE -->
+    <section id="builderPage" class="page">
+      <section class="hero">
+        <div>
+          <h1 id="heroTitle">Question Library Builder</h1>
+          <p class="lead" id="heroLead">Create a multilingual JSON with translations for it, en, fr and es, then download it.</p>
         </div>
-        <div id="questionsContainer" class="questions"></div>
-      </div>
+        <div class="hero-card">
+          <label for="uiLanguage" id="uiLanguageLabel">UI language</label>
+          <select id="uiLanguage">
+            <option value="it">Italiano</option>
+            <option value="en" selected>English</option>
+            <option value="fr">Français</option>
+            <option value="es">Español</option>
+          </select>
 
-      <div class="panel preview-panel">
-        <div class="panel-header">
-          <h2 id="previewTitle">JSON preview</h2>
-          <button id="copyBtn" class="secondary small">Copy</button>
+          <label for="libraryName" id="libraryNameLabel">Library name</label>
+          <input id="libraryName" type="text" value="Liar's Edge Custom Library" />
+          <label for="defaultLanguage" id="defaultLanguageLabel">Default language</label>
+          <select id="defaultLanguage">
+            <option value="it">Italiano</option>
+            <option value="en">English</option>
+            <option value="fr">Français</option>
+            <option value="es">Español</option>
+          </select>
+          <div class="actions">
+            <button id="addQuestionBtn" class="secondary">+ Add question</button>
+            <button id="loadExampleBtn" class="secondary">Load example</button>
+            <button id="downloadBtn">Download JSON</button>
+          </div>
         </div>
-        <textarea id="jsonPreview" readonly spellcheck="false"></textarea>
-        <p class="hint" id="formatHint">The final format is compatible with the app: every question contains <code>translations</code> with the available languages.</p>
-        <p class="hint" id="importHint">You can load an existing JSON, edit it and download it again.</p>
-      </div>
+      </section>
+
+      <section class="workspace">
+        <div class="panel">
+          <div class="panel-header">
+            <h2 id="questionsTitle">Questions</h2>
+            <span id="questionCount" class="badge">0 questions</span>
+          </div>
+          <div id="questionsContainer" class="questions"></div>
+        </div>
+
+        <div class="panel preview-panel">
+          <div class="panel-header">
+            <h2 id="previewTitle">JSON preview</h2>
+            <button id="copyBtn" class="secondary small">Copy</button>
+          </div>
+          <textarea id="jsonPreview" readonly spellcheck="false"></textarea>
+          <p class="hint" id="formatHint">The final format is compatible with the app: every question contains <code>translations</code> with the available languages.</p>
+          <p class="hint" id="importHint">You can load an existing JSON, edit it and download it again.</p>
+        </div>
+      </section>
     </section>
   </main>
 
